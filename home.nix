@@ -39,6 +39,11 @@
     enable = true;
     userName = "nortonbatista";
     userEmail = "49415914+nortonbatista@users.noreply.github.com";
+    extraConfig = {
+      init = {
+        defaultBranch = "main";
+      };
+    };
   };
 
   programs.home-manager.enable = true;
