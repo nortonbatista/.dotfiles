@@ -60,6 +60,7 @@
     jack.enable = true;
   };
 
+  programs.zsh.enable = true;
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.norton = {
     isNormalUser = true;
@@ -69,6 +70,7 @@
       "wheel"
     ];
     packages = with pkgs; [ ];
+    shell = pkgs.zsh;
   };
 
   # Allow unfree packages
