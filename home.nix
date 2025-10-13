@@ -23,7 +23,7 @@
     shellAliases = {
       neofetch = "fastfetch -c neofetch";
       update = "nix flake update --flake ~/.dotfiles";
-      upgrade = "sudo nixos-rebuild switch --flake ~/.dotfiles && home-manager switch --flake ~/.dotfiles";
+      upgrade = "sudo nixos-rebuild switch --flake ~/.dotfiles";
     };
   };
 
