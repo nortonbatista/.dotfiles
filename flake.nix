@@ -3,8 +3,10 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager/master";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+      url = "github:nix-community/home-manager/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -23,13 +25,18 @@
       nixosConfigurations = {
         ghetsis = lib.nixosSystem {
           inherit system;
-          modules = [ ./configuration.nix ]; # Path to your NixOS configuration
-        };
-      };
-      homeConfigurations = {
-        norton = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [ ./home.nix ]; # Path to your NixOS configuration
+          modules = [
+            ./configuration.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users.norton = import ./home.nix;
+                backupFileExtension = "backup";
+              };
+            }
+          ];
         };
       };
     };
