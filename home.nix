@@ -12,6 +12,7 @@
     nixfmt-rfc-style
     vim
     librewolf-bin
+    prismlauncher
   ];
 
   home.file = { };
