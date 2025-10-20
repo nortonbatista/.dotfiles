@@ -13,6 +13,7 @@
     vim
     librewolf-bin
     prismlauncher
+    vesktop
   ];
 
   home.file = { };
