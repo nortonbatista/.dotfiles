@@ -1,7 +1,10 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./modules/shell/zsh ];
+  imports = [
+    ./modules/shell/zsh
+    ./modules/shell/bash
+  ];
 
   home.username = "norton";
   home.homeDirectory = "/home/norton";
@@ -19,15 +22,6 @@
   home.file = { };
 
   home.sessionVariables = { };
-
-  programs.bash = {
-    enable = true;
-    shellAliases = {
-      neofetch = "fastfetch -c neofetch";
-      update = "nix flake update --flake ~/.dotfiles";
-      upgrade = "sudo nixos-rebuild switch --flake ~/.dotfiles";
-    };
-  };
 
   programs.git = {
     enable = true;
