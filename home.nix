@@ -4,6 +4,7 @@
   imports = [
     ./modules/shell/zsh
     ./modules/shell/bash
+    ./modules/git
   ];
 
   home.username = "norton";
@@ -22,17 +23,6 @@
   home.file = { };
 
   home.sessionVariables = { };
-
-  programs.git = {
-    enable = true;
-    settings = {
-      init.defaultBranch = "main";
-      user = {
-        name = "nortonbatista";
-        email = "49415914+nortonbatista@users.noreply.github.com";
-      };
-    };
-  };
 
   programs.home-manager.enable = true;
 
