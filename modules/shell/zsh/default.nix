@@ -8,6 +8,7 @@
 
   programs.zsh = {
     enable = true;
+    shellAliases = import ../shellAliases;
     initContent = ''
       bindkey "^[[H"    beginning-of-line
       bindkey "^[[F"    end-of-line
@@ -40,10 +41,5 @@
       zinit light zsh-users/zsh-autosuggestions
       zinit light zsh-users/zsh-completions
     '';
-    shellAliases = {
-      neofetch = "fastfetch -c neofetch";
-      update = "nix flake update --flake ~/.dotfiles";
-      upgrade = "sudo nixos-rebuild switch --flake ~/.dotfiles";
-    };
   };
 }
