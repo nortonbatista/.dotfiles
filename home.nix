@@ -31,11 +31,11 @@
 
   programs.git = {
     enable = true;
-    userName = "nortonbatista";
-    userEmail = "49415914+nortonbatista@users.noreply.github.com";
-    extraConfig = {
-      init = {
-        defaultBranch = "main";
+    settings = {
+      init.defaultBranch = "main";
+      user = {
+        name = "nortonbatista";
+        email = "49415914+nortonbatista@users.noreply.github.com";
       };
     };
   };
