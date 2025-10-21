@@ -2,9 +2,9 @@
 
 {
   imports = [
-    ./modules/shell/zsh
-    ./modules/shell/bash
-    ./modules/git
+    ../../modules/shell/zsh
+    ../../modules/shell/bash
+    ../../modules/git
   ];
 
   home.username = "norton";
