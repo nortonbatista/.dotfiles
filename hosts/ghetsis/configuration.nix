@@ -4,13 +4,8 @@
   imports = [
     ./modules/system/boot.nix
     ./modules/system/locale.nix
+    ./modules/system/networking.nix
   ];
-
-  # Define your hostname.
-  networking.hostName = "ghetsis";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
