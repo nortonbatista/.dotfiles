@@ -6,20 +6,8 @@
     ./modules/system/locale.nix
     ./modules/system/networking.nix
     ./modules/system/sound.nix
+    ./modules/system/users.nix
   ];
-
-  programs.zsh.enable = true;
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.norton = {
-    isNormalUser = true;
-    description = "Norton";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-    ];
-    packages = with pkgs; [ ];
-    shell = pkgs.zsh;
-  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
