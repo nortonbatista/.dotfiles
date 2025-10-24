@@ -1,7 +1,10 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./modules/shell ];
+  imports = [
+    ./modules/shell
+    ./modules/git
+  ];
 
   home.packages = with pkgs; [
     vscodium
@@ -18,17 +21,6 @@
   home.file = { };
 
   home.sessionVariables = { };
-
-  programs.git = {
-    enable = true;
-    settings = {
-      init.defaultBranch = "main";
-      user = {
-        name = "nortonbatista";
-        email = "49415914+nortonbatista@users.noreply.github.com";
-      };
-    };
-  };
 
   home.username = "norton";
   home.homeDirectory = "/home/norton";
