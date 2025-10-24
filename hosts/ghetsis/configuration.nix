@@ -10,6 +10,7 @@
     ./modules/system/desktop/gnome
     ./modules/services/zram.nix
     ./modules/gamming/minecraft
+    ./modules/gamming/steam
   ];
 
   # Allow unfree packages
@@ -18,10 +19,6 @@
   environment.systemPackages = with pkgs; [ ];
 
   services.xserver.videoDrivers = [ "amdgpu" ];
-
-  programs.steam.enable = true;
-  programs.steam.gamescopeSession.enable = true;
-  programs.gamemode.enable = true;
 
   # Enable flakes
   nix.settings.experimental-features = [
