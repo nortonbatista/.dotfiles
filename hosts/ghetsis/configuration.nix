@@ -9,6 +9,7 @@
     ./modules/system/users.nix
     ./modules/system/desktop/gnome
     ./modules/services/zram.nix
+    ./modules/services/minecraft-server.nix
   ];
 
   # Allow unfree packages
@@ -22,12 +23,6 @@
   programs.steam.gamescopeSession.enable = true;
   programs.gamemode.enable = true;
   programs.haguichi.enable = true;
-
-  services.minecraft-server = {
-    enable = true;
-    eula = true;
-    openFirewall = true;
-  };
 
   # Enable flakes
   nix.settings.experimental-features = [
