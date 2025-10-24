@@ -26,7 +26,7 @@
         ghetsis = lib.nixosSystem {
           inherit system;
           modules = [
-            ./hosts/ghetsis/configuration.nix
+            ./hosts/ghetsis
             home-manager.nixosModules.home-manager
             {
               home-manager = {
