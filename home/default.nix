@@ -13,8 +13,6 @@
     vim
     librewolf-bin
     vesktop
-    spaceship-prompt
-    zinit
   ];
 
   home.file = { };

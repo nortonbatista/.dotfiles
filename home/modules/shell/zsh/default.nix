@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    spaceship-prompt
+    zinit
+  ];
+
   programs.zsh = {
     enable = true;
     shellAliases = import ../shellAliases.nix;
