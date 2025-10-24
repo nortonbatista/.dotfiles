@@ -7,6 +7,7 @@
     ./modules/system/networking.nix
     ./modules/system/sound.nix
     ./modules/system/users.nix
+    ./modules/services/zram.nix
   ];
 
   # Allow unfree packages
@@ -20,11 +21,6 @@
   programs.steam.gamescopeSession.enable = true;
   programs.gamemode.enable = true;
   programs.haguichi.enable = true;
-
-  zramSwap = {
-    enable = true;
-    priority = 100;
-  };
 
   services.minecraft-server = {
     enable = true;
