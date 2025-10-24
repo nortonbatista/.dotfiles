@@ -7,6 +7,7 @@
     ./modules/system/networking.nix
     ./modules/system/sound.nix
     ./modules/system/users.nix
+    ./modules/system/desktop/gnome
     ./modules/services/zram.nix
   ];
 
@@ -27,39 +28,6 @@
     eula = true;
     openFirewall = true;
   };
-
-  # Enable the GNOME Desktop Environment.
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
-
-  # Enable automatic login for the user.
-  services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "norton";
-
-  # Remove NixOS documentation pkg.
-  documentation.enable = false;
-
-  # Remove XTerm pkg.
-  services.xserver.excludePackages = with pkgs; [ xterm ];
-
-  # Remove some gnome default pkgs.
-  services.gnome.core-developer-tools.enable = false;
-  services.gnome.games.enable = false;
-  environment.gnome.excludePackages = with pkgs; [
-    gnome-tour
-    gnome-user-docs
-    gnome-connections
-    gnome-maps
-    gnome-characters
-    gnome-contacts
-    gnome-weather
-    gnome-music
-    snapshot
-    epiphany
-    geary
-    yelp
-    simple-scan
-  ];
 
   # Enable flakes
   nix.settings.experimental-features = [
