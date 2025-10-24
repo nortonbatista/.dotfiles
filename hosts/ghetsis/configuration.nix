@@ -89,6 +89,12 @@
     priority = 100;
   };
 
+  services.minecraft-server = {
+    enable = true;
+    eula = true;
+    openFirewall = true;
+  };
+
   # Enable flakes
   nix.settings.experimental-features = [
     "nix-command"
