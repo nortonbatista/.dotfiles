@@ -26,13 +26,13 @@
         ghetsis = lib.nixosSystem {
           inherit system;
           modules = [
-            ./hosts/ghetsis
+            ./configuration.nix
             home-manager.nixosModules.home-manager
             {
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                users.norton = import ./hosts/ghetsis/home.nix;
+                users.norton = import ./home.nix;
                 backupFileExtension = "backup";
               };
             }
