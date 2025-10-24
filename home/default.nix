@@ -12,7 +12,6 @@
     nixfmt-rfc-style
     vim
     librewolf-bin
-    prismlauncher
     vesktop
     spaceship-prompt
     zinit
