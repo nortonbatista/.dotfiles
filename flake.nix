@@ -17,16 +17,11 @@
       home-manager,
       ...
     }@inputs:
-    let
-      system = "x86_64-linux";
-      lib = nixpkgs.lib;
-      pkgs = nixpkgs.legacyPackages.${system};
-    in
+
     {
       nixosConfigurations = {
-        ghetsis = lib.nixosSystem {
-          inherit system;
-
+        ghetsis = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
           specialArgs = { inherit inputs; };
           modules = [
             ./hosts/ghetsis
