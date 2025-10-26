@@ -2,6 +2,7 @@
   description = "NixOS Flake";
 
   inputs = {
+    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
     nixpkgs.url = "nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -15,7 +16,7 @@
       nixpkgs,
       home-manager,
       ...
-    }:
+    }@inputs:
     let
       system = "x86_64-linux";
       lib = nixpkgs.lib;
@@ -25,6 +26,8 @@
       nixosConfigurations = {
         ghetsis = lib.nixosSystem {
           inherit system;
+
+          specialArgs = { inherit inputs; };
           modules = [
             ./hosts/ghetsis
             home-manager.nixosModules.home-manager
