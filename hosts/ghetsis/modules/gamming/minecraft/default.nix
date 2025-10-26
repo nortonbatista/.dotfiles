@@ -1,11 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [ prismlauncher ];
+  imports = [ ./server.nix ];
 
-  services.minecraft-server = {
-    enable = true;
-    eula = true;
-    openFirewall = true;
-  };
+  environment.systemPackages = with pkgs; [ prismlauncher ];
 }
