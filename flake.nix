@@ -3,7 +3,7 @@
 
   inputs = {
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
-    nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
