@@ -1,13 +1,13 @@
 {
   config,
   pkgs,
-  inputs,
+  nix-minecraft,
   ...
 }:
 
 {
-  imports = [ inputs.nix-minecraft.nixosModules.minecraft-servers ];
-  nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
+  imports = [ nix-minecraft.nixosModules.minecraft-servers ];
+  nixpkgs.overlays = [ nix-minecraft.overlay ];
 
   services.minecraft-servers = {
     enable = true;

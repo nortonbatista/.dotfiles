@@ -15,14 +15,15 @@
       self,
       nixpkgs,
       home-manager,
+      nix-minecraft,
       ...
-    }@inputs:
+    }:
 
     {
       nixosConfigurations = {
         ghetsis = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          specialArgs = { inherit inputs; };
+          specialArgs = { inherit nix-minecraft; };
           modules = [
             ./hosts/ghetsis
             home-manager.nixosModules.home-manager
