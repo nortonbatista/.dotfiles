@@ -16,7 +16,9 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [ ];
+  environment.systemPackages = with pkgs; [
+    ruby_3_4
+  ];
 
   services.xserver.videoDrivers = [ "amdgpu" ];
 
