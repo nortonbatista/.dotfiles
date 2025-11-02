@@ -10,6 +10,12 @@
     enable = true;
     shellAliases = import ../shellAliases.nix;
     initContent = ''
+      # HAVE TO CHECK IF THIS ARE NECESSARY
+      # export BUNDLE_PATH=vendor/bundle
+      # export GEM_HOME=$PWD/vendor/bundle
+      # export PATH=$GEM_HOME/bin:$PATH
+      # export PKG_CONFIG_PATH=${pkgs.libyaml.dev}/lib/pkgconfig:$PKG_CONFIG_PATH
+
       bindkey "^[[H"    beginning-of-line
       bindkey "^[[F"    end-of-line
       bindkey "^[[3~"   delete-char
