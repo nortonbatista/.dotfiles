@@ -13,8 +13,6 @@
       url = "github:Infinidoge/nix-minecraft";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nixpkgs-ruby.url = "github:NixOS/nixpkgs/01d5c88f6d07caf73b35b94fbf6ac4eb502201d1";
   };
 
   outputs =
@@ -23,19 +21,14 @@
       nixpkgs,
       home-manager,
       nix-minecraft,
-      nixpkgs-ruby,
       ...
     }:
 
-    let
-      system = "x86_64-linux";
-      pkgsRuby = nixpkgs-ruby.legacyPackages.${system};
-    in
     {
       nixosConfigurations = {
         ghetsis = nixpkgs.lib.nixosSystem {
-          inherit system;
-          specialArgs = { inherit nix-minecraft pkgsRuby; };
+          system = "x86_64-linux";
+          specialArgs = { inherit nix-minecraft; };
           modules = [
             ./hosts/ghetsis
             home-manager.nixosModules.home-manager

@@ -93,28 +93,11 @@
         "type": "github"
       }
     },
-    "nixpkgs-ruby": {
-      "locked": {
-        "lastModified": 1757995146,
-        "narHash": "sha256-58sTPVE09+JhvFMtgAEhuVAGBltxZ4jRNIJXUkdBCh0=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "01d5c88f6d07caf73b35b94fbf6ac4eb502201d1",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "01d5c88f6d07caf73b35b94fbf6ac4eb502201d1",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "nix-minecraft": "nix-minecraft",
-        "nixpkgs": "nixpkgs",
-        "nixpkgs-ruby": "nixpkgs-ruby"
+        "nixpkgs": "nixpkgs"
       }
     },
     "systems": {

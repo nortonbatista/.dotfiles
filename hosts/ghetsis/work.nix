@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  pkgsRuby,
   ...
 }:
 
@@ -30,8 +29,8 @@
       postgresql
       autoconf
       automake
+      ruby_3_4
     ]
-    ++ (with pkgsRuby; [ ruby_3_4 ]);
 
   users.extraGroups.docker.members = [ "norton" ];
 
